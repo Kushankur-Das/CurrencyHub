@@ -32,10 +32,6 @@ function loadFlag(element) {
   }
 }
 
-window.addEventListener("load", () => {
-  getExchangeRate();
-});
-
 getButton.addEventListener("click", (e) => {
   e.preventDefault();
   getExchangeRate();
