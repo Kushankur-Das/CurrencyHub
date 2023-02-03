@@ -63,11 +63,12 @@ function getExchangeRate() {
   }
   exchangeRateTxt.innerText = "Getting Exchange Rate...";
   charges.innerText = "Calculating Charges...";
-  let url = ` https://v6.exchangerate-api.com/v6/eeAf9554ad872bf3d565ebc27/latest/${fromCurrency.value}`;
+  let url = ` https://v6.exchangerate-api.com/v6/eef9554ad872bf3d565ebc27/latest/${fromCurrency.value}`;
   fetch(url)
     .then((response) => response.json())
     .then((result) => {
       let exchangeRate = result.conversion_rates[toCurrency.value];
+      console.log(exchangeRate);
       let totalExRate = (amountVal * exchangeRate).toFixed(2);
       let Banking_Charges = (totalExRate * 0.18).toFixed(2);
       exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExRate} ${toCurrency.value}`;
