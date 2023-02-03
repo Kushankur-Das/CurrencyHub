@@ -13,6 +13,8 @@ for (let i = 0; i < dropList.length; i++) {
         : currency_code == "INR"
         ? "selected"
         : "";
+    loadFlag(fromCurrency)
+    loadFlag(toCurrency)
     let optionTag = `<option value="${currency_code}" ${selected}>${currency_code}</option>`;
     dropList[i].insertAdjacentHTML("beforeend", optionTag);
   }
