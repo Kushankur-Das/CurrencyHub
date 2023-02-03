@@ -58,10 +58,18 @@ body {
 form :where(input, select, button) {
   width: 100%;
   outline: none;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
-  opacity: 1;
 }
+
+select{
+  color: white;
+}
+
+option{
+  color: black;
+}
+
 form p {
   font-size: 18px;
   margin-bottom: 5px;
@@ -87,7 +95,7 @@ form .drop-list {
   width: 115px;
   height: 45px;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 10px;
   justify-content: center;
   border: 1px solid #999;
 }

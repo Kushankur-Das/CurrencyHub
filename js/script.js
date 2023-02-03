@@ -2,7 +2,7 @@ const dropList = document.querySelectorAll("form select"),
   fromCurrency = document.querySelector(".from select"),
   toCurrency = document.querySelector(".to select"),
   getButton = document.querySelector("form button");
-
+  exchangeIcon = document.querySelector("form .icon");
 for (let i = 0; i < dropList.length; i++) {
   for (let currency_code in country_list) {
     let selected =
@@ -37,14 +37,12 @@ getButton.addEventListener("click", (e) => {
   getExchangeRate();
 });
 
-const exchangeIcon = document.querySelector("form .icon");
 exchangeIcon.addEventListener("click", () => {
   let tempCode = fromCurrency.value;
   fromCurrency.value = toCurrency.value;
   toCurrency.value = tempCode;
   loadFlag(fromCurrency);
   loadFlag(toCurrency);
-  getExchangeRate();
 });
 
 function getExchangeRate() {
