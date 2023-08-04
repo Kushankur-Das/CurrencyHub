@@ -62,11 +62,11 @@ form :where(input, select, button) {
   border: none;
 }
 
-select{
+select {
   color: white;
 }
 
-option{
+option {
   color: black;
 }
 

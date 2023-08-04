@@ -2,7 +2,7 @@ const dropList = document.querySelectorAll("form select"),
   fromCurrency = document.querySelector(".from select"),
   toCurrency = document.querySelector(".to select"),
   getButton = document.querySelector("form button");
-  exchangeIcon = document.querySelector("form .icon");
+exchangeIcon = document.querySelector("form .icon");
 for (let i = 0; i < dropList.length; i++) {
   for (let currency_code in country_list) {
     let selected =
@@ -13,8 +13,8 @@ for (let i = 0; i < dropList.length; i++) {
         : currency_code == "INR"
         ? "selected"
         : "";
-    loadFlag(fromCurrency)
-    loadFlag(toCurrency)
+    loadFlag(fromCurrency);
+    loadFlag(toCurrency);
     let optionTag = `<option value="${currency_code}" ${selected}>${currency_code}</option>`;
     dropList[i].insertAdjacentHTML("beforeend", optionTag);
   }
@@ -72,7 +72,12 @@ function getExchangeRate() {
       let totalExRate = (amountVal * exchangeRate).toFixed(2);
       let Banking_Charges = (totalExRate * 0.18).toFixed(2);
       exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExRate} ${toCurrency.value}`;
-      charges.innerText = `Banking Charges: ${Banking_Charges} ${toCurrency.value}`;
+      //if from currency is same as to currency no charges
+      if (fromCurrency.value == toCurrency.value) {
+        charges.innerText= `Banking Charges: 0`;
+      } else {
+        charges.innerText = `Banking Charges: ${Banking_Charges} ${toCurrency.value}`;
+      }
     })
     .catch(() => {
       exchangeRateTxt.innerText = "Something went wrong";
